@@ -1,25 +1,22 @@
-git add .
+mkdir 10
+cd 10
 
+notepad app.py
+notepad requirements.txt
+notepad test_app.py
+
+mkdir .github
+mkdir .github\workflows
+
+cd .github\workflows
+notepad python-test.yml
+cd ..
+cd ..
+
+git init
+git add .
 git commit -m "Add GitHub Actions test workflow"
 
-git push origin main
-
-Check Output
-
-Go to:
-
-GitHub → Actions tab
-
-Click your workflow
-
-Expected Output
-
-test_add PASSED
-
-test_greet PASSED
-
-2 passed in 0.0Xs
-
-And you will see:
-
-Green Tick (✔)
+git remote add origin https://github.com/ANANDHU1114/10.git
+git branch -M main
+git push -u origin main
