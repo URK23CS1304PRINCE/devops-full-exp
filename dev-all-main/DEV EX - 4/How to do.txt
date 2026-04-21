@@ -1,5 +1,6 @@
-tep 1: Go to your project folder
-cd "C:\Users\luepi\flask-docker-app"
+step 1: Go to your project folder
+mkdir flask-docker-app 
+
 ✅ Step 2: Create app.py
 notepad app.py
 
