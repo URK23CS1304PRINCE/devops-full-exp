@@ -1,41 +1,38 @@
-Settings → Secrets and variables → Actions
+mkdir 7ex
+cd 7ex
 
-Add:
+git init
+git branch -M main
 
-DOCKER_USERNAME → your Docker Hub username
+mkdir .github
+mkdir .github\workflows
 
-DOCKER_PASSWORD → Docker Hub access token
+notepad .github\workflows\build-push.yml
+
+notepad Dockerfile
+notepad app.py
+notepad requirements.txt
 
 git add .
-
 git commit -m "Add GitHub Actions pipeline"
 
-git push origin main
+rename Dockerfile.txt Dockerfile
 
-Check Pipeline
+git remote add origin https://github.com/ANANDHU1114/ex7.git
+git remote set-url origin https://github.com/ANANDHU1114/ex7.git
 
-Go to:
+git push -u origin main
 
-GitHub → Actions tab
+docker build -t anandhu2005/python-app:latest .
+docker run -p 5000:5000 anandhu2005/python-app:latest
 
-if image not is pushed to docker:- {
+echo "# trigger" >> app.py
+git add .
+git commit -m "Trigger CI"
+git push
 
-docker build -t username/python-app:latest .
+notepad .github\workflows\build-push.yml
 
-docker push username/python-app:latest }
-
-Check Docker Hub
-
-Open:
-
-https://hub.docker.com/
-
-Your image:
-
-yourusername/python-app:latest
-
-How to Verify
-
-Run:
-
-docker pull urk23cs1262/python-app:latest
+git add .
+git commit -m "Fix Docker auth + update actions"
+git push
